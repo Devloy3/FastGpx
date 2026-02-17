@@ -1,0 +1,8 @@
+[package]
+name = "Tracks"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+gpx = "0.10.0"
+pyo3 = { version = "0.28.1", features = ["extension-module"] }
