@@ -28,7 +28,7 @@ fn leer_coordenadas(ruta_gpx: String) -> PyResult<Vec<(f64, f64)>> {
 
 // Aquí registramos el módulo para Python
 #[pymodule]
-fn procesador_gpx(_py: Python, m: &PyModule) -> PyResult<()> {
+fn fast_gpx(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(leer_coordenadas, m)?)?;
     Ok(())
 }
