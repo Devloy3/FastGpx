@@ -3,6 +3,10 @@ name = "Tracks"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+name = "fast_gpx"
+create-type = ["cdylib"]
+
 [dependencies]
 gpx = "0.10.0"
 pyo3 = { version = "0.28.1", features = ["extension-module"] }
