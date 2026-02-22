@@ -34,7 +34,7 @@ maturin develop
 ```
 import fast_gpx
 
-points = fast_gpx.load_gpx("ruta.gpx")
+points = fast_gpx.LoadGpx("ruta.gpx")
 print(points[:5])
 ```
 

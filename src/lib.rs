@@ -5,7 +5,7 @@ use std::io::BufReader;
 
 // Esta es la función que Python verá
 #[pyfunction]
-fn leer_coordenadas(ruta_gpx: String) -> PyResult<Vec<(f64, f64)>> {
+fn LoadGpx(ruta_gpx: String) -> PyResult<Vec<(f64, f64)>> {
     // 1. Abrimos el archivo
     let file = File::open(ruta_gpx).map_err(|e| PyErr::new::<pyo3::exceptions::PyFileNotFoundError, _>(e.to_string()))?;
     let reader = BufReader::new(file);
@@ -29,6 +29,6 @@ fn leer_coordenadas(ruta_gpx: String) -> PyResult<Vec<(f64, f64)>> {
 // Aquí registramos el módulo para Python
 #[pymodule]
 fn fast_gpx(m: &Bound<'_, PyModule>) -> PyResult<()> {
-    m.add_function(wrap_pyfunction!(leer_coordenadas, m)?)?;
+    m.add_function(wrap_pyfunction!(LoadGpx, m)?)?;
     Ok(())
 }
